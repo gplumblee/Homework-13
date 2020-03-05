@@ -1,0 +1,23 @@
+body {
+  background-color: #e7a144;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 56px;
+  font-family: fantasy;
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px;
+  background-color: rgb(128, 67, 30);
+  color: #e7a144;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+li {
+  box-sizing: border-box;
+}

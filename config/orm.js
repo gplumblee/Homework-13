@@ -23,28 +23,16 @@ function objToSql(ob) {
 }
 
 var orm = {
-  all: function(tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function(err, result) {
+  all: function(cb) {
+    connection.query(`SELECT * FROM burgers`, function(err, result) {
       if (err) {
         throw err;
       }
       cb(result);
     });
   },
-  create: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
-
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
-
-    console.log(queryString);
-
-    connection.query(queryString, vals, function(err, result) {
+  create: function(val, cb) {
+    connection.query(`INSERT INTO burgers (burger_name) VALUES (?)`, val, function(err, result) {
       if (err) {
         throw err;
       }
@@ -52,20 +40,11 @@ var orm = {
       cb(result);
     });
   },
-  update: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
-
-    queryString += " SET ";
-    queryString += objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
-
-    console.log(queryString);
-    connection.query(queryString, function(err, result) {
+  update: function(colVals, condition, cb) {
+    connection.query('UPDATE burgers SET ? WHERE id = ?',[colVals, condition], function(err, result) {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },

@@ -1,38 +1,37 @@
-<h1>Burgers!</h1>
-
-<h2>Burgers to Be Devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers That Are Devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" burger_name="burger_name">
+<div id="burger-pic" class="text-center">
+  <img src="/assets/burger_icon.png" class="rounded" alt="Hamburger Photo">
+</div>
+<div class="container">
+  <h1>Burgers!</h1>
+  <div class="row">
+      <div class="col-4">
+          <h2>Burgers to Be Devoured!</h2>
+          <ul class="list-group">
+              {{#each burgers}}
+              {{#unless devoured}}
+              {{> burgers/burger-block devoured=false}}
+              {{/unless}}
+              {{/each}}
+          </ul>
+      </div>
+      <div class="col-4">
+          <h2>Add a Burger</h2>
+          <form class="create-form">
+              <div class="form-group">
+                  <input type="text" id="ca" burger_name="burger_name" placeholder="Burger Name">
+                  <button class="btn btn-outline-primary float-right" type="submit">Add burger</button>
+              </div>
+          </form>
+      </div>
+      <div class="col-4">
+          <h2>Burgers That Are Devoured!</h2>
+          <ul>
+              {{#each burgers}}
+              {{#if devoured}}
+              {{> burgers/burger-block devoured=true}}
+              {{/if}}
+              {{/each}}
+          </ul>
+      </div>
   </div>
-
-  <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" burger_name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" burger_name="devoured" value="0"> Ready to Be Devoured!
-  </div>
-
-  <button type="submit">Add burger</button>
-</form>
+</div>
