@@ -16,12 +16,12 @@ var newDevoured = $(this).attr("devour") === 'true' ? 0 : 1
   $(".create-form").on("submit", function(event) {
     event.preventDefault();
     var newBurger = {
-      name: $("#ca")
+      name: $("#addBurger")
         .val()
         .trim()
     };
 
-    console.log(newBurger)
+    // console.log(newBurger)
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
