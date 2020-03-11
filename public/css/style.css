@@ -18,6 +18,50 @@ h2 {
   border-radius: 5px;
 }
 
+ul {
+  padding-inline-start: 0;
+}
+
 li {
   box-sizing: border-box;
+}
+
+.list-group-item {
+  background-color: blanchedalmond;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-family: 'Delius', cursive;
+}
+
+#addBurger {
+  border-radius: 5px;
+  width: 80%;
+}
+
+#submit {
+  width: 15%;
+}
+
+.delete-burger {
+  color: black;
+  cursor: pointer;
+  
+  /* width: 30px;
+  height: 30px; */
+}
+
+/* Style buttons */
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffc64b; /* Gold background */
+  border: none; /* Remove borders */
+  height: 30px;
+  color: brown; /* White text */
+  padding: 0px 10px 0px 10px; /* Some padding */
+  font-size: 14px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #bf9437;
 }

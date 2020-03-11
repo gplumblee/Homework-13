@@ -1,9 +1,10 @@
 <li class="list-group-item">
 	{{burger_name}}
 
-	<button class="btn btn-warning btn-sm change-devoured" data-id="{{id}}" devour="{{devoured}}">
+	<button class="btn change-devoured" data-id="{{id}}" devour="{{devoured}}">
 		{{#if devoured}}Order Again{{else}}Eat da Burger!{{/if}}
 	</button>
+		<i class="delete-burger fa fa-lg fa-trash" data-id="{{this.id}}"></i>
 
-	<button class="btn btn-warning btn-sm delete-burger" data-id="{{this.id}}">Delete</button>
 </li>
+
